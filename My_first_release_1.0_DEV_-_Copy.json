@@ -1,0 +1,56 @@
+{
+  "objects": [
+    {
+      "release": "My first release/1.0",
+      "environments": [
+        "dev"
+      ],
+      "approvalGate": "MANUAL",
+      "isDisabled": true,
+      "skipTasksWithUnchangedApplications": false,
+      "shouldSyncTestSourcesUponExecution": false,
+      "isApprovalRequired": false,
+      "previousPhase": "DEV",
+      "name": "DEV - Copy",
+      "kind": "Phase"
+    },
+    {
+      "phase": "My first release/1.0/DEV - Copy",
+      "isDisabled": false,
+      "applicationVersionBuilds": [
+        {
+          "applicationVersion": "Local|testApp/master",
+          "buildNumber": "1"
+        }
+      ],
+      "isOnFailurePhaseEnabled": true,
+      "isSkipTaskOnFailure": false,
+      "isIgnoreTaskFailure": false,
+      "isOptional": true,
+      "name": "deploy",
+      "kind": "Task",
+      "endpoint": "manualDeployment",
+      "plugin": "Manual Deployment/1.1|3",
+      "type": "Manual Deployment"
+    },
+    {
+      "previousTasks": [
+        "deploy"
+      ],
+      "phase": "My first release/1.0/DEV - Copy",
+      "isDisabled": false,
+      "applicationVersionBuilds": [
+        {
+          "applicationVersion": "Local|testApp/master",
+          "buildNumber": "1"
+        }
+      ],
+      "isOnFailurePhaseEnabled": true,
+      "isSkipTaskOnFailure": false,
+      "isIgnoreTaskFailure": false,
+      "isOptional": true,
+      "name": "manual",
+      "kind": "Task"
+    }
+  ]
+}
